@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Assistant | Company Database</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('https://via.placeholder.com/1200x800') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #2b6cb0;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        h1::before {
+            content: '';
+            background: url('https://via.placeholder.com/40') no-repeat center center;
+            background-size: contain;
+            width: 40px;
+            height: 40px;
+        }
+
+        form {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 20px;
+        }
+
+        input[type="text"] {
+            width: 70%;
+            padding: 10px;
+            border: 1px solid #cbd5e0;
+            border-radius: 4px;
+            margin-right: 10px;
+        }
+
+        button {
+            background-color: #2b6cb0;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2c5282;
+        }
+
+        .response-container {
+            margin-top: 30px;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        pre {
+            background: #edf2f7;
+            padding: 15px;
+            border-radius: 6px;
+            white-space: pre-wrap;
+            color: #2d3748;
+        }
+
+        .error {
+            color: #d9534f;
+        }
+
+        h3 {
+            color: #2c5282;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            color: #2d3748;
+            padding-left: 20px;
+            margin-top: 10px;
+            background: #ffffff;
+            padding: 15px;
+            border-radius: 6px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        @media screen and (max-width: 600px) {
+            input[type="text"] {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Chat Assistant for Company Database</h1>
+
+    <form method="POST">
+        <input type="text" name="query" placeholder="Enter your query...">
+        <button type="submit">Ask</button>
+    </form>
+
+    {% if response %}
+        <div class="response-container">
+            <h3>Response:</h3>
+            <pre class="{% if 'not found' in response or 'Invalid' in response %}error{% endif %}">{{ response|safe }}</pre>
+        </div>
+    {% endif %}
+
+    <h4>Example Queries:</h4>
+    <ul>
+        <li>"Show employees in the Engineering department"</li>
+        <li>"Who is the manager of Sales department?"</li>
+        <li>"List employees hired after 2022-01-01"</li>
+        <li>"What's the total salary for Marketing?"</li>
+    </ul>
+</body>
+</html>
