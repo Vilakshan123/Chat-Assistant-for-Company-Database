@@ -1,6 +1,6 @@
 # Chat-Assistant-for-Company-Database
 
-Welcome to the **AI Basics Chat Assistant**—a Python-based interactive assistant designed to respond to user queries by interacting with an SQLite database.
+Welcome to the **Chat Assistant for Company Database**—a Python-based interactive assistant designed to respond to user queries by interacting with an SQLite database.
 
 ---
 
@@ -37,11 +37,20 @@ Ensure you have Python installed on your system.
 - Provides messages when no results are found
 - Ensures input validation for date formats
 
-## 🧪 Testing
+## 🛠️ Database Initialization
 
-To run the unit tests:
+ The project requires an SQLite database (company.db) for storing employee and department data.
+ To set up the database, use the provided test.py file:
+  #### What Happens in test.py
+  - Ensure you have Python installed.
+  - Inserts sample data into both tables:
+    - Example employees: Alice (Sales), Bob (Engineering), Charlie (Marketing).
+    - Example departments: Sales, Engineering, Marketing.
 
-  pytest tests/test_app.py
+   #### Important Note
+
+If company.db already exists, running test.py will not overwrite it but may insert duplicate records. Delete the company.db file before rerunning if you want a fresh database setup.
+
 
 ## 🚀 Future Improvements
 - Support for more complex queries
