@@ -106,10 +106,10 @@ def chat_assistant():
             else:
                 response = '''Sorry, I couldn't understand your query. Supported queries:
                     <ul>
-                        <li>"Show employees in [department]"</li>
+                        <li>"Show employees in [department] department"</li>
                         <li>"Who is the manager of [department] department?"</li>
                         <li>"List employees hired after [date]"</li>
-                        <li>"Total salary expense for [department]"</li>
+                        <li>"Total salary expense for [department] department"</li>
                     </ul>'''
     
     return render_template('index.html', response=response)
