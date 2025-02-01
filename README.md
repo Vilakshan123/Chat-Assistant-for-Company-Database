@@ -52,12 +52,6 @@ Ensure you have Python installed on your system.
 If company.db already exists, running test.py will not overwrite it but may insert duplicate records. Delete the company.db file before rerunning if you want a fresh database setup.
 
 
-## 🚀 Future Improvements
-- Support for more complex queries
-- Enhanced UI for better user experience
-- Integration with machine learning models for smarter query processing
-
-
 # 🌐 Website Preview:
 
  - Live Demo: https://vilakshan123.pythonanywhere.com/
